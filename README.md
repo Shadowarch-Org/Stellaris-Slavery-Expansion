@@ -1,1 +1,1 @@
-# Stellaris-Slavery-expansion
+# Stellaris-Slavery-Expansion
