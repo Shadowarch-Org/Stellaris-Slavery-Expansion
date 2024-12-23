@@ -22,7 +22,7 @@ stararch_building_slave_stronghold = {
 	}
 
 	planet_modifier = {
-        job_slave_soldier_add = 2
+        job_stararch_slave_soldier_add = 2
         planet_jobs_slave_produces_mult = 0.05
 		pop_cat_slave_political_power = -0.25
 		planet_resettlement_unemployed_mult = -0.50
@@ -39,11 +39,13 @@ stararch_building_slave_stronghold = {
     }
 }
 
-stararch_building_slave_den = {
+stararch_building_slave_guild = {
 	base_buildtime = 240
 	icon = building_residence
 
 	category = amenity
+
+	base_cap_amount = 1
 
 	potential = {
 		owner = { is_regular_empire = yes }
@@ -74,4 +76,112 @@ stararch_building_slave_den = {
 			energy = 1
 		}
 	}
+}
+
+stararch_building_grand_mansion = {
+	base_buildtime = 240
+	position_priority = 100
+	can_be_ruined = no
+	category = amenity
+	exempt_from_ai_planet_specialization = no
+
+
+    potential = {
+		owner = { is_regular_empire = yes }
+		owner = { has_policy_flag = slavery_allowed }
+	}
+
+    destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			NOT = { owner = { has_policy_flag = slavery_allowed } }
+		}
+	}
+
+	planet_modifier = {
+        job_stararch_slave_maid_add = 2
+	}
+
+    resources = {
+        category = planet_buildings
+        cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+    }
+}
+
+stararch_slave_petting_zoo = {
+	base_buildtime = 240
+	position_priority = 100
+	can_be_ruined = no
+	category = amenity
+	exempt_from_ai_planet_specialization = no
+
+
+    potential = {
+		owner = { is_regular_empire = yes }
+		owner = { has_policy_flag = slavery_allowed }
+	}
+
+    destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			NOT = { owner = { has_policy_flag = slavery_allowed } }
+		}
+	}
+
+	planet_modifier = {
+        job_stararch_slave_pet_add = 2
+	}
+
+    resources = {
+        category = planet_buildings
+        cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+    }
+}
+
+stararch_crude_alloy_forge = {
+	base_buildtime = 240
+	position_priority = 100
+	can_be_ruined = no
+	category = manufacturing
+	exempt_from_ai_planet_specialization = no
+
+
+    potential = {
+		owner = { is_regular_empire = yes }
+		owner = { has_policy_flag = slavery_allowed }
+	}
+
+    destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			NOT = { owner = { has_policy_flag = slavery_allowed } }
+		}
+	}
+
+	planet_modifier = {
+        job_stararch_slave_alloy_processor = 2
+	}
+
+    resources = {
+        category = planet_buildings
+        cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+    }
 }
